@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:intl/intl.dart';
 
 import '../../../../core/l10n/app_localizations.dart';
 import '../providers/dashboard_provider.dart';
@@ -14,6 +15,7 @@ class DashboardPage extends ConsumerWidget {
     final dashboardAsync = ref.watch(dashboardProvider);
     final theme = Theme.of(context);
     final l10n = AppLocalizations.of(context);
+    final numberFormat = NumberFormat.decimalPattern(l10n.locale.languageCode);
 
     return Scaffold(
       body: SingleChildScrollView(
@@ -61,7 +63,7 @@ class DashboardPage extends ConsumerWidget {
                       Expanded(
                         child: StatsCard(
                           title: l10n.totalActiveDebt,
-                          value: '${data.totalActiveDebt.toLocaleString()} ${l10n.sar}',
+                          value: '${numberFormat.format(data.totalActiveDebt)} ${l10n.sar}',
                           icon: Icons.account_balance_wallet_outlined,
                           color: theme.colorScheme.primary,
                         ),
@@ -70,7 +72,7 @@ class DashboardPage extends ConsumerWidget {
                       Expanded(
                         child: StatsCard(
                           title: l10n.collectedThisMonth,
-                          value: '${data.collectedThisMonth.toLocaleString()} ${l10n.sar}',
+                          value: '${numberFormat.format(data.collectedThisMonth)} ${l10n.sar}',
                           icon: Icons.trending_up,
                           color: Colors.green,
                         ),
@@ -83,7 +85,7 @@ class DashboardPage extends ConsumerWidget {
                       Expanded(
                         child: StatsCard(
                           title: l10n.overdueDebt,
-                          value: '${data.overdueAmount.toLocaleString()} ${l10n.sar}',
+                          value: '${numberFormat.format(data.overdueAmount)} ${l10n.sar}',
                           icon: Icons.warning_amber,
                           color: Colors.orange,
                         ),

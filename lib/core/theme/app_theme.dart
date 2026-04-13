@@ -18,11 +18,11 @@ class AppTheme {
       foregroundColor: Color(0xFF0F172A),
       surfaceTintColor: Colors.transparent,
     ),
-    cardTheme: CardTheme(
+    cardTheme: const CardThemeData(
       elevation: 0,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(16),
-        side: BorderSide(color: Colors.grey.shade200),
+        borderRadius: BorderRadius.all(Radius.circular(16)),
+        side: BorderSide(color: Color(0xFFE5E7EB)),
       ),
       color: Colors.white,
     ),
@@ -77,13 +77,13 @@ class AppTheme {
       foregroundColor: Colors.white,
       surfaceTintColor: Colors.transparent,
     ),
-    cardTheme: CardTheme(
+    cardTheme: const CardThemeData(
       elevation: 0,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(16),
-        side: BorderSide(color: Colors.grey.shade800),
+        borderRadius: BorderRadius.all(Radius.circular(16)),
+        side: BorderSide(color: Color(0xFF374151)),
       ),
-      color: const Color(0xFF1E293B),
+      color: Color(0xFF1E293B),
     ),
     inputDecorationTheme: InputDecorationTheme(
       filled: true,

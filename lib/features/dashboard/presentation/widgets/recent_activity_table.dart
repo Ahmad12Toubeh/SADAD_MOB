@@ -4,6 +4,8 @@ import 'package:intl/intl.dart';
 import '../../../../core/l10n/app_localizations.dart';
 import '../providers/dashboard_provider.dart';
 
+final _numberFormat = NumberFormat.decimalPattern('ar');
+
 class RecentActivityTable extends StatelessWidget {
   final List<RecentDebt> recentDebts;
   const RecentActivityTable({super.key, required this.recentDebts});
@@ -102,7 +104,7 @@ class RecentActivityTable extends StatelessWidget {
                     final statusColor = _statusColor(debt.status);
                     return DataRow(cells: [
                       DataCell(Text(debt.customerName)),
-                      DataCell(Text('${debt.principalAmount.toLocaleString()} ${l10n.sar}')),
+                      DataCell(Text('${_numberFormat.format(debt.principalAmount)} ${l10n.sar}')),
                       DataCell(Text(_typeLabel(debt.type, l10n))),
                       DataCell(Text(
                         DateFormat('yyyy/MM/dd').format(debt.dueDate),

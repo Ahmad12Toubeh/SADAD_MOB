@@ -131,6 +131,13 @@ class AppLocalizations {
   String get error => _t('common.error');
   String get sar => _t('common.sar');
 
+  // ── Navigation ──
+  String get navDashboard => _t('nav.dashboard');
+  String get navCustomers => _t('nav.customers');
+  String get navDebts => _t('nav.debts');
+  String get navAnalytics => _t('nav.analytics');
+  String get navSettings => _t('nav.settings');
+
   // ── Validation ──
   String get emailRequired => _t('validation.emailRequired');
   String get emailInvalid => _t('validation.emailInvalid');
@@ -252,6 +259,11 @@ class AppLocalizations {
       'months.4': 'أبريل', 'months.5': 'مايو', 'months.6': 'يونيو',
       'months.7': 'يوليو', 'months.8': 'أغسطس', 'months.9': 'سبتمبر',
       'months.10': 'أكتوبر', 'months.11': 'نوفمبر', 'months.12': 'ديسمبر',
+      'nav.dashboard': 'الرئيسية',
+      'nav.customers': 'العملاء',
+      'nav.debts': 'الديون',
+      'nav.analytics': 'التحليلات',
+      'nav.settings': 'الإعدادات',
     },
     'en': {
       'app.name': 'SADAD',
@@ -357,6 +369,11 @@ class AppLocalizations {
       'months.4': 'April', 'months.5': 'May', 'months.6': 'June',
       'months.7': 'July', 'months.8': 'August', 'months.9': 'September',
       'months.10': 'October', 'months.11': 'November', 'months.12': 'December',
+      'nav.dashboard': 'Dashboard',
+      'nav.customers': 'Customers',
+      'nav.debts': 'Debts',
+      'nav.analytics': 'Analytics',
+      'nav.settings': 'Settings',
     },
   };
 }

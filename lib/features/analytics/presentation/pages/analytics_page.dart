@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:intl/intl.dart';
 
 import '../../../../core/l10n/app_localizations.dart';
 import '../providers/analytics_provider.dart';
@@ -12,6 +13,7 @@ class AnalyticsPage extends ConsumerWidget {
     final analyticsAsync = ref.watch(analyticsProvider);
     final theme = Theme.of(context);
     final l10n = AppLocalizations.of(context);
+    final numberFormat = NumberFormat.decimalPattern(l10n.locale.languageCode);
 
     return Scaffold(
       body: SingleChildScrollView(
@@ -43,7 +45,7 @@ class AnalyticsPage extends ConsumerWidget {
                       Expanded(
                         child: _SummaryCard(
                           title: l10n.totalDebt,
-                          value: '${data.totalDebt.toLocaleString()} ${l10n.sar}',
+                          value: '${numberFormat.format(data.totalDebt)} ${l10n.sar}',
                           icon: Icons.trending_up,
                           color: theme.colorScheme.primary,
                         ),
@@ -52,7 +54,7 @@ class AnalyticsPage extends ConsumerWidget {
                       Expanded(
                         child: _SummaryCard(
                           title: l10n.totalCollected,
-                          value: '${data.totalCollected.toLocaleString()} ${l10n.sar}',
+                          value: '${numberFormat.format(data.totalCollected)} ${l10n.sar}',
                           icon: Icons.check_circle_outline,
                           color: Colors.green,
                         ),
@@ -65,7 +67,7 @@ class AnalyticsPage extends ConsumerWidget {
                       Expanded(
                         child: _SummaryCard(
                           title: l10n.remaining,
-                          value: '${data.remaining.toLocaleString()} ${l10n.sar}',
+                          value: '${numberFormat.format(data.remaining)} ${l10n.sar}',
                           icon: Icons.pending_outlined,
                           color: Colors.orange,
                         ),

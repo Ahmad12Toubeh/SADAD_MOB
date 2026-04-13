@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:intl/intl.dart';
 
 import '../../../../core/l10n/app_localizations.dart';
 import '../providers/debts_provider.dart';
@@ -19,6 +20,7 @@ class _DebtsPageState extends ConsumerState<DebtsPage> {
     final debtsAsync = ref.watch(debtsProvider);
     final theme = Theme.of(context);
     final l10n = AppLocalizations.of(context);
+    final numberFormat = NumberFormat.decimalPattern(l10n.locale.languageCode);
 
     return Scaffold(
       body: Column(
@@ -151,7 +153,7 @@ class _DebtsPageState extends ConsumerState<DebtsPage> {
                                 Expanded(
                                   child: _DebtInfoItem(
                                     label: l10n.amount,
-                                    value: '${debt.principalAmount.toLocaleString()} ${l10n.sar}',
+                                    value: '${numberFormat.format(debt.principalAmount)} ${l10n.sar}',
                                   ),
                                 ),
                                 Expanded(

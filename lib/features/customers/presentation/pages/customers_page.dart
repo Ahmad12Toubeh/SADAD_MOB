@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:intl/intl.dart';
 
 import '../../../../core/l10n/app_localizations.dart';
 import '../providers/customers_provider.dart';
@@ -25,6 +26,7 @@ class _CustomersPageState extends ConsumerState<CustomersPage> {
     final customersAsync = ref.watch(customersProvider);
     final theme = Theme.of(context);
     final l10n = AppLocalizations.of(context);
+    final numberFormat = NumberFormat.decimalPattern(l10n.locale.languageCode);
 
     return Scaffold(
       body: Column(
@@ -123,7 +125,7 @@ class _CustomersPageState extends ConsumerState<CustomersPage> {
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
                             Text(
-                              '${customer.totalDebt.toLocaleString()} ${l10n.sar}',
+                              '${numberFormat.format(customer.totalDebt)} ${l10n.sar}',
                               style: const TextStyle(fontWeight: FontWeight.bold),
                             ),
                             Text(
@@ -171,7 +173,6 @@ class _CustomersPageState extends ConsumerState<CustomersPage> {
             TextField(
               controller: phoneController,
               keyboardType: TextInputType.phone,
-              textDirection: TextDirection.ltr,
               decoration: InputDecoration(labelText: l10n.phoneLabel),
             ),
             const SizedBox(height: 12),
