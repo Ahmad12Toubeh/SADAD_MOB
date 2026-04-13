@@ -34,7 +34,7 @@ class AppLocalizations {
   // ── Auth Register ──
   String get registerTitle => _t('auth.register.title');
   String get registerSubtitle => _t('auth.register.subtitle');
-  String get nameLabel => _t('auth.register.nameLabel');
+  String get nameLabel => _t('common.nameLabel');
   String get storeNameLabel => _t('auth.register.storeNameLabel');
   String get registerSubmit => _t('auth.register.submit');
   String get hasAccount => _t('auth.register.hasAccount');
@@ -47,6 +47,19 @@ class AppLocalizations {
   String get forgotSuccess => _t('auth.forgot.success');
   String get forgotCheckEmail => _t('auth.forgot.checkEmail');
   String get backToLogin => _t('auth.forgot.backToLogin');
+
+  // ── Auth Reset Password ──
+  String get resetTitle => _t('auth.reset.title');
+  String get resetSubtitle => _t('auth.reset.subtitle');
+  String get resetSubmit => _t('auth.reset.submit');
+  String get resetSuccess => _t('auth.reset.success');
+  String get verificationCodeLabel => _t('auth.reset.codeLabel');
+  String get verificationCodeRequired => _t('auth.reset.codeRequired');
+  String get verificationCodeInvalid => _t('auth.reset.codeInvalid');
+  String get newPasswordLabel => _t('auth.reset.newPasswordLabel');
+  String get confirmPasswordLabel => _t('auth.reset.confirmPasswordLabel');
+  String get confirmPasswordRequired => _t('auth.reset.confirmPasswordRequired');
+  String get passwordMismatch => _t('auth.reset.passwordMismatch');
 
   // ── Dashboard ──
   String get dashboardTitle => _t('dashboard.title');
@@ -119,6 +132,40 @@ class AppLocalizations {
   String get logout => _t('settings.logout');
   String get logoutConfirm => _t('settings.logoutConfirm');
 
+  // ── Associations ──
+  String get associationsTitle => _t('associations.title');
+  String get createAssociation => _t('associations.create');
+  String get noAssociations => _t('associations.empty');
+  String get createFirstAssociation => _t('associations.createFirst');
+  String get associationName => _t('associations.name');
+  String get monthlyAmount => _t('associations.monthlyAmount');
+  String get associationKind => _t('associations.kind');
+  String get members => _t('associations.members');
+  String get progress => _t('associations.progress');
+  String get from => _t('associations.from');
+  String get currentReceiver => _t('associations.currentReceiver');
+  String get family => _t('associations.family');
+  String get active => _t('associations.active');
+  String get rotating => _t('associations.rotating');
+
+  // ── Guarantors ──
+  String get guarantorsTitle => _t('guarantors.title');
+  String get searchGuarantor => _t('guarantors.search');
+  String get noGuarantors => _t('guarantors.empty');
+  String get totalCapital => _t('guarantors.totalCapital');
+  String get safe => _t('guarantors.safe');
+  String get warning => _t('guarantors.warning');
+
+  // ── Reminders ──
+  String get remindersTitle => _t('reminders.title');
+  String get remindersSubtitle => _t('reminders.subtitle');
+  String get overdue => _t('reminders.overdue');
+  String get upcoming => _t('reminders.upcoming');
+  String get sent => _t('reminders.sent');
+  String get daysOverdue => _t('reminders.daysOverdue');
+  String get daysRemaining => _t('reminders.daysRemaining');
+  String get amount => _t('reminders.amount');
+
   // ── Common ──
   String get cancel => _t('common.cancel');
   String get add => _t('common.add');
@@ -136,6 +183,9 @@ class AppLocalizations {
   String get navCustomers => _t('nav.customers');
   String get navDebts => _t('nav.debts');
   String get navAnalytics => _t('nav.analytics');
+  String get navAssociations => _t('nav.associations');
+  String get navGuarantors => _t('nav.guarantors');
+  String get navReminders => _t('nav.reminders');
   String get navSettings => _t('nav.settings');
 
   // ── Validation ──
@@ -181,6 +231,17 @@ class AppLocalizations {
       'auth.forgot.success': 'تم إرسال رابط إعادة التعيين',
       'auth.forgot.checkEmail': 'تحقق من بريدك الإلكتروني لإعادة تعيين كلمة المرور',
       'auth.forgot.backToLogin': 'العودة لتسجيل الدخول',
+      'auth.reset.title': 'إعادة تعيين كلمة المرور',
+      'auth.reset.subtitle': 'أدخل رمز التحقق وكلمة المرور الجديدة',
+      'auth.reset.submit': 'إعادة التعيين',
+      'auth.reset.success': 'تم إعادة تعيين كلمة المرور بنجاح',
+      'auth.reset.codeLabel': 'رمز التحقق',
+      'auth.reset.codeRequired': 'رمز التحقق مطلوب',
+      'auth.reset.codeInvalid': 'رمز التحقق غير صالح',
+      'auth.reset.newPasswordLabel': 'كلمة المرور الجديدة',
+      'auth.reset.confirmPasswordLabel': 'تأكيد كلمة المرور',
+      'auth.reset.confirmPasswordRequired': 'تأكيد كلمة المرور مطلوب',
+      'auth.reset.passwordMismatch': 'كلمات المرور غير متطابقة',
       'dashboard.title': 'لوحة التحكم',
       'dashboard.subtitle': 'نظرة عامة على الديون والمدفوعات',
       'dashboard.totalActiveDebt': 'إجمالي الديون النشطة',
@@ -248,6 +309,7 @@ class AppLocalizations {
       'common.error': 'حدث خطأ',
       'common.status': 'الحالة',
       'common.sar': 'ر.س',
+      'common.nameLabel': 'الاسم',
       'validation.emailRequired': 'البريد الإلكتروني مطلوب',
       'validation.emailInvalid': 'بريد إلكتروني غير صالح',
       'validation.passwordRequired': 'كلمة المرور مطلوبة',
@@ -263,7 +325,38 @@ class AppLocalizations {
       'nav.customers': 'العملاء',
       'nav.debts': 'الديون',
       'nav.analytics': 'التحليلات',
+      'nav.associations': 'الجمعيات',
+      'nav.guarantors': 'الكفلاء',
+      'nav.reminders': 'التذكيرات',
       'nav.settings': 'الإعدادات',
+      'associations.title': 'الجمعيات',
+      'associations.create': 'إنشاء جمعية',
+      'associations.empty': 'لا توجد جمعيات',
+      'associations.createFirst': 'إنشاء أول جمعية',
+      'associations.name': 'اسم الجمعية',
+      'associations.monthlyAmount': 'المبلغ الشهري',
+      'associations.kind': 'نوع الجمعية',
+      'associations.members': 'أعضاء',
+      'associations.progress': 'التقدم',
+      'associations.from': 'من',
+      'associations.currentReceiver': 'المستلم الحالي',
+      'associations.family': 'عائلية',
+      'associations.active': 'نشطة',
+      'associations.rotating': 'دوارة',
+      'guarantors.title': 'الكفلاء',
+      'guarantors.search': 'بحث عن كفيل...',
+      'guarantors.empty': 'لا يوجد كفلاء',
+      'guarantors.totalCapital': 'إجمالي رأس المال',
+      'guarantors.safe': 'آمن',
+      'guarantors.warning': 'تحذير',
+      'reminders.title': 'التذكيرات',
+      'reminders.subtitle': 'إدارة تذكيرات الدفع',
+      'reminders.overdue': 'متأخرة',
+      'reminders.upcoming': 'قادمة',
+      'reminders.sent': 'أُرسلت',
+      'reminders.daysOverdue': 'أيام متأخرة',
+      'reminders.daysRemaining': 'أيام متبقية',
+      'reminders.amount': 'المبلغ',
     },
     'en': {
       'app.name': 'SADAD',
@@ -291,6 +384,17 @@ class AppLocalizations {
       'auth.forgot.success': 'Reset Link Sent',
       'auth.forgot.checkEmail': 'Check your email to reset your password',
       'auth.forgot.backToLogin': 'Back to Login',
+      'auth.reset.title': 'Reset Password',
+      'auth.reset.subtitle': 'Enter the verification code and new password',
+      'auth.reset.submit': 'Reset Password',
+      'auth.reset.success': 'Password reset successfully',
+      'auth.reset.codeLabel': 'Verification Code',
+      'auth.reset.codeRequired': 'Verification code is required',
+      'auth.reset.codeInvalid': 'Invalid verification code',
+      'auth.reset.newPasswordLabel': 'New Password',
+      'auth.reset.confirmPasswordLabel': 'Confirm Password',
+      'auth.reset.confirmPasswordRequired': 'Confirm password is required',
+      'auth.reset.passwordMismatch': 'Passwords do not match',
       'dashboard.title': 'Dashboard',
       'dashboard.subtitle': 'Overview of debts and payments',
       'dashboard.totalActiveDebt': 'Total Active Debt',
@@ -358,6 +462,7 @@ class AppLocalizations {
       'common.error': 'An error occurred',
       'common.status': 'Status',
       'common.sar': 'SAR',
+      'common.nameLabel': 'Name',
       'validation.emailRequired': 'Email is required',
       'validation.emailInvalid': 'Invalid email address',
       'validation.passwordRequired': 'Password is required',
@@ -373,7 +478,38 @@ class AppLocalizations {
       'nav.customers': 'Customers',
       'nav.debts': 'Debts',
       'nav.analytics': 'Analytics',
+      'nav.associations': 'Associations',
+      'nav.guarantors': 'Guarantors',
+      'nav.reminders': 'Reminders',
       'nav.settings': 'Settings',
+      'associations.title': 'Associations',
+      'associations.create': 'Create Association',
+      'associations.empty': 'No associations',
+      'associations.createFirst': 'Create first association',
+      'associations.name': 'Association Name',
+      'associations.monthlyAmount': 'Monthly Amount',
+      'associations.kind': 'Association Kind',
+      'associations.members': 'Members',
+      'associations.progress': 'Progress',
+      'associations.from': 'from',
+      'associations.currentReceiver': 'Current Receiver',
+      'associations.family': 'Family',
+      'associations.active': 'Active',
+      'associations.rotating': 'Rotating',
+      'guarantors.title': 'Guarantors',
+      'guarantors.search': 'Search guarantors...',
+      'guarantors.empty': 'No guarantors',
+      'guarantors.totalCapital': 'Total Capital',
+      'guarantors.safe': 'Safe',
+      'guarantors.warning': 'Warning',
+      'reminders.title': 'Reminders',
+      'reminders.subtitle': 'Manage payment reminders',
+      'reminders.overdue': 'Overdue',
+      'reminders.upcoming': 'Upcoming',
+      'reminders.sent': 'Sent',
+      'reminders.daysOverdue': 'days overdue',
+      'reminders.daysRemaining': 'days remaining',
+      'reminders.amount': 'Amount',
     },
   };
 }

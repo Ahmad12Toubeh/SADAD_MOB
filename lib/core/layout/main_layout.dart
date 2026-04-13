@@ -13,7 +13,10 @@ class MainLayout extends ConsumerWidget {
     if (location.startsWith('/customers')) return 1;
     if (location.startsWith('/debts')) return 2;
     if (location.startsWith('/analytics')) return 3;
-    if (location.startsWith('/settings')) return 4;
+    if (location.startsWith('/associations')) return 4;
+    if (location.startsWith('/guarantors')) return 5;
+    if (location.startsWith('/reminders')) return 6;
+    if (location.startsWith('/settings')) return 7;
     return 0;
   }
 
@@ -29,7 +32,7 @@ class MainLayout extends ConsumerWidget {
             NavigationRail(
               selectedIndex: index,
               onDestinationSelected: (i) {
-                final routes = ['/dashboard', '/customers', '/debts', '/analytics', '/settings'];
+                final routes = ['/dashboard', '/customers', '/debts', '/analytics', '/associations', '/guarantors', '/reminders', '/settings'];
                 context.go(routes[i]);
               },
               labelType: NavigationRailLabelType.all,
@@ -65,6 +68,21 @@ class MainLayout extends ConsumerWidget {
                   label: Text(l10n.navAnalytics),
                 ),
                 NavigationRailDestination(
+                  icon: const Icon(Icons.groups_outlined),
+                  selectedIcon: const Icon(Icons.groups),
+                  label: Text(l10n.navAssociations),
+                ),
+                NavigationRailDestination(
+                  icon: const Icon(Icons.person_search_outlined),
+                  selectedIcon: const Icon(Icons.person_search),
+                  label: Text(l10n.navGuarantors),
+                ),
+                NavigationRailDestination(
+                  icon: const Icon(Icons.notifications_outlined),
+                  selectedIcon: const Icon(Icons.notifications),
+                  label: Text(l10n.navReminders),
+                ),
+                NavigationRailDestination(
                   icon: const Icon(Icons.settings_outlined),
                   selectedIcon: const Icon(Icons.settings),
                   label: Text(l10n.navSettings),
@@ -80,7 +98,7 @@ class MainLayout extends ConsumerWidget {
           ? NavigationBar(
               selectedIndex: index,
               onDestinationSelected: (i) {
-                final routes = ['/dashboard', '/customers', '/debts', '/analytics', '/settings'];
+                final routes = ['/dashboard', '/customers', '/debts', '/analytics', '/associations', '/guarantors', '/reminders', '/settings'];
                 context.go(routes[i]);
               },
               destinations: [
@@ -103,6 +121,21 @@ class MainLayout extends ConsumerWidget {
                   icon: const Icon(Icons.bar_chart_outlined),
                   selectedIcon: const Icon(Icons.bar_chart),
                   label: l10n.navAnalytics,
+                ),
+                NavigationDestination(
+                  icon: const Icon(Icons.groups_outlined),
+                  selectedIcon: const Icon(Icons.groups),
+                  label: l10n.navAssociations,
+                ),
+                NavigationDestination(
+                  icon: const Icon(Icons.person_search_outlined),
+                  selectedIcon: const Icon(Icons.person_search),
+                  label: l10n.navGuarantors,
+                ),
+                NavigationDestination(
+                  icon: const Icon(Icons.notifications_outlined),
+                  selectedIcon: const Icon(Icons.notifications),
+                  label: l10n.navReminders,
                 ),
                 NavigationDestination(
                   icon: const Icon(Icons.settings_outlined),

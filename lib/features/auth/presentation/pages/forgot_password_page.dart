@@ -85,6 +85,11 @@ class _ForgotPasswordPageState extends ConsumerState<ForgotPasswordPage> {
                         ),
                         const SizedBox(height: 24),
                         ElevatedButton(
+                          onPressed: () => context.go('/reset-password'),
+                          child: Text(l10n.resetSubmit),
+                        ),
+                        const SizedBox(height: 12),
+                        TextButton(
                           onPressed: () => context.go('/login'),
                           child: Text(l10n.backToLogin),
                         ),
