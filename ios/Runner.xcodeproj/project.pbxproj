@@ -1,0 +1,2 @@
+// !$*UTF8*$!
+// Placeholder - Flutter will generate the full pbxproj on first build
