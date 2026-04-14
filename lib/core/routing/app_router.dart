@@ -15,11 +15,11 @@ import '../../features/debts/presentation/pages/create_debt_page.dart';
 import '../../features/debts/presentation/pages/debt_details_page.dart';
 import '../../features/settings/presentation/pages/settings_page.dart';
 import '../../features/analytics/presentation/pages/analytics_page.dart';
-import '../../features/associations/presentation/pages/associations_page.dart';
-import '../../features/associations/presentation/pages/association_details_page.dart';
-import '../../features/guarantors/presentation/pages/guarantors_page.dart';
-import '../../features/guarantors/presentation/pages/guarantor_details_page.dart';
-import '../../features/reminders/presentation/pages/reminders_page.dart';
+import '../../features/associations/presentation/pages/associations_hub_page.dart';
+import '../../features/associations/presentation/pages/association_details_screen.dart';
+import '../../features/guarantors/presentation/pages/guarantors_hub_page.dart';
+import '../../features/guarantors/presentation/pages/guarantor_details_screen.dart';
+import '../../features/reminders/presentation/pages/reminders_hub_page.dart';
 import '../../features/owner/presentation/pages/owner_page.dart';
 import '../../features/subscriptions/presentation/pages/subscriptions_page.dart';
 import '../layout/main_layout.dart';
@@ -132,12 +132,12 @@ final routerProvider = Provider<GoRouter>((ref) {
           GoRoute(
             path: AppRoutes.associations,
             pageBuilder: (context, state) => const NoTransitionPage(
-              child: AssociationsPage(),
+              child: AssociationsHubPage(),
             ),
             routes: [
               GoRoute(
                 path: ':id',
-                builder: (context, state) => AssociationDetailsPage(
+                builder: (context, state) => AssociationDetailsScreen(
                   associationId: state.pathParameters['id'] ?? '',
                 ),
               ),
@@ -146,12 +146,12 @@ final routerProvider = Provider<GoRouter>((ref) {
           GoRoute(
             path: AppRoutes.guarantors,
             pageBuilder: (context, state) => const NoTransitionPage(
-              child: GuarantorsPage(),
+              child: GuarantorsHubPage(),
             ),
             routes: [
               GoRoute(
                 path: ':id',
-                builder: (context, state) => GuarantorDetailsPage(
+                builder: (context, state) => GuarantorDetailsScreen(
                   guarantorId: state.pathParameters['id'] ?? '',
                 ),
               ),
@@ -160,7 +160,7 @@ final routerProvider = Provider<GoRouter>((ref) {
           GoRoute(
             path: AppRoutes.reminders,
             pageBuilder: (context, state) => const NoTransitionPage(
-              child: RemindersPage(),
+              child: RemindersHubPage(),
             ),
           ),
         ],

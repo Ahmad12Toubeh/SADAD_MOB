@@ -31,14 +31,39 @@ class Guarantor {
   }
 }
 
-final guarantorsProvider = FutureProvider<List<Guarantor>>((ref) async {
-  final apiClient = ref.read(apiClientProvider);
-  final response = await apiClient.get('/guarantors');
-  
-  final items = (response.data['items'] as List<dynamic>?)
-          ?.map((item) => Guarantor.fromJson(item as Map<String, dynamic>))
-          .toList() ??
-      [];
-  
-  return items;
-});
+class GuarantorsNotifier extends AsyncNotifier<List<Guarantor>> {
+  @override
+  List<Guarantor> build() {
+    loadGuarantors();
+    return const [];
+  }
+
+  Future<void> loadGuarantors() async {
+    state = const AsyncLoading();
+    state = await AsyncValue.guard(() async {
+      final apiClient = ref.read(apiClientProvider);
+      final response = await apiClient.get('/guarantors');
+      final data = response.data;
+      final items = data is Map ? (data['items'] as List<dynamic>? ?? const []) : (data as List<dynamic>? ?? const []);
+      return items
+          .whereType<Map>()
+          .map((item) => Guarantor.fromJson(Map<String, dynamic>.from(item)))
+          .toList();
+    });
+  }
+
+  Future<Guarantor> getGuarantor(String id) async {
+    final apiClient = ref.read(apiClientProvider);
+    final response = await apiClient.get('/guarantors/$id');
+    final data = response.data;
+    final raw = data is Map ? (data['guarantor'] ?? data['item'] ?? data) : data;
+    return Guarantor.fromJson(Map<String, dynamic>.from(raw as Map));
+  }
+
+  Future<void> refresh() async {
+    await loadGuarantors();
+  }
+}
+
+final guarantorsProvider =
+    AsyncNotifierProvider<GuarantorsNotifier, List<Guarantor>>(GuarantorsNotifier.new);
