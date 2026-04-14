@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../l10n/app_localizations.dart';
+import '../routing/app_routes.dart';
 
 class MainLayout extends ConsumerWidget {
   final Widget child;
@@ -10,13 +11,13 @@ class MainLayout extends ConsumerWidget {
 
   int _currentIndex(BuildContext context) {
     final location = GoRouterState.of(context).matchedLocation;
-    if (location.startsWith('/customers')) return 1;
-    if (location.startsWith('/debts')) return 2;
-    if (location.startsWith('/analytics')) return 3;
-    if (location.startsWith('/associations')) return 4;
-    if (location.startsWith('/guarantors')) return 5;
-    if (location.startsWith('/reminders')) return 6;
-    if (location.startsWith('/settings')) return 7;
+    if (location.startsWith(AppRoutes.customers)) return 1;
+    if (location.startsWith(AppRoutes.debts)) return 2;
+    if (location.startsWith(AppRoutes.analytics)) return 3;
+    if (location.startsWith(AppRoutes.associations)) return 4;
+    if (location.startsWith(AppRoutes.guarantors)) return 5;
+    if (location.startsWith(AppRoutes.reminders)) return 6;
+    if (location.startsWith(AppRoutes.settings)) return 7;
     return 0;
   }
 
@@ -32,7 +33,16 @@ class MainLayout extends ConsumerWidget {
             NavigationRail(
               selectedIndex: index,
               onDestinationSelected: (i) {
-                final routes = ['/dashboard', '/customers', '/debts', '/analytics', '/associations', '/guarantors', '/reminders', '/settings'];
+                final routes = [
+                  AppRoutes.dashboard,
+                  AppRoutes.customers,
+                  AppRoutes.debts,
+                  AppRoutes.analytics,
+                  AppRoutes.associations,
+                  AppRoutes.guarantors,
+                  AppRoutes.reminders,
+                  AppRoutes.settings,
+                ];
                 context.go(routes[i]);
               },
               labelType: NavigationRailLabelType.all,
@@ -98,7 +108,16 @@ class MainLayout extends ConsumerWidget {
           ? NavigationBar(
               selectedIndex: index,
               onDestinationSelected: (i) {
-                final routes = ['/dashboard', '/customers', '/debts', '/analytics', '/associations', '/guarantors', '/reminders', '/settings'];
+                final routes = [
+                  AppRoutes.dashboard,
+                  AppRoutes.customers,
+                  AppRoutes.debts,
+                  AppRoutes.analytics,
+                  AppRoutes.associations,
+                  AppRoutes.guarantors,
+                  AppRoutes.reminders,
+                  AppRoutes.settings,
+                ];
                 context.go(routes[i]);
               },
               destinations: [

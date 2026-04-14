@@ -166,6 +166,18 @@ class AppLocalizations {
   String get daysOverdue => _t('reminders.daysOverdue');
   String get daysRemaining => _t('reminders.daysRemaining');
   String get reminderAmount => _t('reminders.amount');
+  String get ownerTitle => _t('owner.title');
+  String get ownerSubtitle => _t('owner.subtitle');
+  String get ownerCustomersCount => _t('owner.customersCount');
+  String get ownerTotalCollected => _t('owner.totalCollected');
+  String get ownerActiveSubscriptions => _t('owner.activeSubscriptions');
+  String get ownerExpiringSoon => _t('owner.expiringSoon');
+  String get ownerPlans => _t('owner.plans');
+  String get ownerManagedUsers => _t('owner.managedUsers');
+  String get ownerAccessDenied => _t('owner.accessDenied');
+  String get ownerAccessDeniedSubtitle => _t('owner.accessDeniedSubtitle');
+  String get subscriptionsTitle => _t('subscriptions.title');
+  String get subscriptionsSubtitle => _t('subscriptions.subtitle');
 
   // ── Common ──
   String get cancel => _t('common.cancel');
@@ -368,6 +380,18 @@ class AppLocalizations {
       'reminders.daysOverdue': 'أيام متأخرة',
       'reminders.daysRemaining': 'أيام متبقية',
       'reminders.amount': 'المبلغ',
+      'owner.title': 'Owner Dashboard',
+      'owner.subtitle': 'Track customers, plans, and accounts close to expiry.',
+      'owner.customersCount': 'Customers',
+      'owner.totalCollected': 'Total Collected',
+      'owner.activeSubscriptions': 'Active Subscriptions',
+      'owner.expiringSoon': 'Expiring Soon',
+      'owner.plans': 'Subscription Plans',
+      'owner.managedUsers': 'Managed Users',
+      'owner.accessDenied': 'You do not have access to the owner dashboard.',
+      'owner.accessDeniedSubtitle': 'This screen is only available for owner and admin accounts.',
+      'subscriptions.title': 'Subscriptions',
+      'subscriptions.subtitle': 'Redirecting you to the owner dashboard.',
     },
     'en': {
       'app.name': 'SADAD',
@@ -530,6 +554,18 @@ class AppLocalizations {
       'reminders.daysOverdue': 'days overdue',
       'reminders.daysRemaining': 'days remaining',
       'reminders.amount': 'Amount',
+      'owner.title': 'Owner Dashboard',
+      'owner.subtitle': 'Track customers, plans, and accounts close to expiry.',
+      'owner.customersCount': 'Customers',
+      'owner.totalCollected': 'Total Collected',
+      'owner.activeSubscriptions': 'Active Subscriptions',
+      'owner.expiringSoon': 'Expiring Soon',
+      'owner.plans': 'Subscription Plans',
+      'owner.managedUsers': 'Managed Users',
+      'owner.accessDenied': 'You do not have access to the owner dashboard.',
+      'owner.accessDeniedSubtitle': 'This screen is only available for owner and admin accounts.',
+      'subscriptions.title': 'Subscriptions',
+      'subscriptions.subtitle': 'Redirecting you to the owner dashboard.',
     },
   };
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../core/l10n/app_localizations.dart';
 import '../../../../core/l10n/locale_provider.dart';
@@ -20,6 +21,10 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
     final theme = Theme.of(context);
     final l10n = AppLocalizations.of(context);
     final locale = ref.watch(localeProvider);
+    final authState = ref.watch(authNotifierProvider).valueOrNull;
+    final canManageOwner = authState != null &&
+        (authState.role?.toLowerCase() == 'owner' ||
+            authState.role?.toLowerCase() == 'admin');
 
     return Scaffold(
       body: SingleChildScrollView(
@@ -69,6 +74,40 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                 ),
               ),
             ),
+            if (canManageOwner) ...[
+              const SizedBox(height: 16),
+              Card(
+                child: Padding(
+                  padding: const EdgeInsets.all(20),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        l10n.ownerTitle,
+                        style: theme.textTheme.titleMedium?.copyWith(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(height: 12),
+                      ListTile(
+                        leading: const Icon(Icons.admin_panel_settings_outlined),
+                        title: Text(l10n.ownerTitle),
+                        subtitle: Text(l10n.ownerSubtitle),
+                        trailing: const Icon(Icons.chevron_left),
+                        onTap: () => context.push('/owner'),
+                      ),
+                      ListTile(
+                        leading: const Icon(Icons.workspace_premium_outlined),
+                        title: Text(l10n.subscriptionsTitle),
+                        subtitle: Text(l10n.subscriptionsSubtitle),
+                        trailing: const Icon(Icons.chevron_left),
+                        onTap: () => context.push('/subscriptions'),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
             const SizedBox(height: 16),
             Card(
               child: Padding(
