@@ -2,7 +2,9 @@ class AppConstants {
   AppConstants._();
 
   static const String appName = 'SADAD';
-  static const String apiBaseUrl = 'https://sadad-api.onrender.com/api';
+  // Temporary until the API is deployed to your own server.
+  static const String apiBaseUrl = 'https://sadad-api.onrender.com';
+  static const String apiPathPrefix = '/api';
   static const String apiVersion = 'v1';
 
   // Storage keys

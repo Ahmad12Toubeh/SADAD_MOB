@@ -6,7 +6,7 @@ import '../constants/app_constants.dart';
 
 final dioProvider = Provider<Dio>((ref) {
   final dio = Dio(BaseOptions(
-    baseUrl: AppConstants.apiBaseUrl,
+    baseUrl: '${AppConstants.apiBaseUrl}${AppConstants.apiPathPrefix}',
     connectTimeout: AppConstants.connectTimeout,
     receiveTimeout: AppConstants.receiveTimeout,
     headers: {
