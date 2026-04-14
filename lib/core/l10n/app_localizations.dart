@@ -58,7 +58,8 @@ class AppLocalizations {
   String get verificationCodeInvalid => _t('auth.reset.codeInvalid');
   String get newPasswordLabel => _t('auth.reset.newPasswordLabel');
   String get confirmPasswordLabel => _t('auth.reset.confirmPasswordLabel');
-  String get confirmPasswordRequired => _t('auth.reset.confirmPasswordRequired');
+  String get confirmPasswordRequired =>
+      _t('auth.reset.confirmPasswordRequired');
   String get passwordMismatch => _t('auth.reset.passwordMismatch');
 
   // ── Dashboard ──
@@ -164,7 +165,7 @@ class AppLocalizations {
   String get sent => _t('reminders.sent');
   String get daysOverdue => _t('reminders.daysOverdue');
   String get daysRemaining => _t('reminders.daysRemaining');
-  String get amount => _t('reminders.amount');
+  String get reminderAmount => _t('reminders.amount');
 
   // ── Common ──
   String get cancel => _t('common.cancel');
@@ -226,10 +227,12 @@ class AppLocalizations {
       'auth.register.hasAccount': 'عندك حساب؟',
       'auth.register.login': 'تسجيل الدخول',
       'auth.forgot.title': 'نسيت كلمة المرور؟',
-      'auth.forgot.subtitle': 'أدخل بريدك الإلكتروني وسنرسل لك رابط إعادة التعيين',
+      'auth.forgot.subtitle':
+          'أدخل بريدك الإلكتروني وسنرسل لك رابط إعادة التعيين',
       'auth.forgot.submit': 'إرسال رابط إعادة التعيين',
       'auth.forgot.success': 'تم إرسال رابط إعادة التعيين',
-      'auth.forgot.checkEmail': 'تحقق من بريدك الإلكتروني لإعادة تعيين كلمة المرور',
+      'auth.forgot.checkEmail':
+          'تحقق من بريدك الإلكتروني لإعادة تعيين كلمة المرور',
       'auth.forgot.backToLogin': 'العودة لتسجيل الدخول',
       'auth.reset.title': 'إعادة تعيين كلمة المرور',
       'auth.reset.subtitle': 'أدخل رمز التحقق وكلمة المرور الجديدة',
@@ -317,10 +320,18 @@ class AppLocalizations {
       'validation.fieldRequired': 'هذا الحقل مطلوب',
       'validation.phoneRequired': 'رقم الهاتف مطلوب',
       'validation.phoneInvalid': 'رقم هاتف غير صالح',
-      'months.1': 'يناير', 'months.2': 'فبراير', 'months.3': 'مارس',
-      'months.4': 'أبريل', 'months.5': 'مايو', 'months.6': 'يونيو',
-      'months.7': 'يوليو', 'months.8': 'أغسطس', 'months.9': 'سبتمبر',
-      'months.10': 'أكتوبر', 'months.11': 'نوفمبر', 'months.12': 'ديسمبر',
+      'months.1': 'يناير',
+      'months.2': 'فبراير',
+      'months.3': 'مارس',
+      'months.4': 'أبريل',
+      'months.5': 'مايو',
+      'months.6': 'يونيو',
+      'months.7': 'يوليو',
+      'months.8': 'أغسطس',
+      'months.9': 'سبتمبر',
+      'months.10': 'أكتوبر',
+      'months.11': 'نوفمبر',
+      'months.12': 'ديسمبر',
       'nav.dashboard': 'الرئيسية',
       'nav.customers': 'العملاء',
       'nav.debts': 'الديون',
@@ -379,7 +390,8 @@ class AppLocalizations {
       'auth.register.hasAccount': 'Already have an account?',
       'auth.register.login': 'Login',
       'auth.forgot.title': 'Forgot Password?',
-      'auth.forgot.subtitle': 'Enter your email and we\'ll send you a reset link',
+      'auth.forgot.subtitle':
+          'Enter your email and we\'ll send you a reset link',
       'auth.forgot.submit': 'Send Reset Link',
       'auth.forgot.success': 'Reset Link Sent',
       'auth.forgot.checkEmail': 'Check your email to reset your password',
@@ -470,10 +482,18 @@ class AppLocalizations {
       'validation.fieldRequired': 'This field is required',
       'validation.phoneRequired': 'Phone number is required',
       'validation.phoneInvalid': 'Invalid phone number',
-      'months.1': 'January', 'months.2': 'February', 'months.3': 'March',
-      'months.4': 'April', 'months.5': 'May', 'months.6': 'June',
-      'months.7': 'July', 'months.8': 'August', 'months.9': 'September',
-      'months.10': 'October', 'months.11': 'November', 'months.12': 'December',
+      'months.1': 'January',
+      'months.2': 'February',
+      'months.3': 'March',
+      'months.4': 'April',
+      'months.5': 'May',
+      'months.6': 'June',
+      'months.7': 'July',
+      'months.8': 'August',
+      'months.9': 'September',
+      'months.10': 'October',
+      'months.11': 'November',
+      'months.12': 'December',
       'nav.dashboard': 'Dashboard',
       'nav.customers': 'Customers',
       'nav.debts': 'Debts',
@@ -519,8 +539,7 @@ class _AppLocalizationsDelegate
   const _AppLocalizationsDelegate();
 
   @override
-  bool isSupported(Locale locale) =>
-      ['ar', 'en'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => ['ar', 'en'].contains(locale.languageCode);
 
   @override
   Future<AppLocalizations> load(Locale locale) async =>

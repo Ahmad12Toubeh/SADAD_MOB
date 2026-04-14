@@ -56,7 +56,7 @@ class _AssociationsPageState extends ConsumerState<AssociationsPage> {
                         Icon(Icons.groups_outlined, size: 64, color: Colors.grey.shade400),
                         const SizedBox(height: 16),
                         Text(l10n.noAssociations,
-                            style: TextStyle(color: Colors.grey.shade500, fontSize: 16)),
+                            style: TextStyle(color: Colors.grey.shade500, fontSize: 16),),
                         const SizedBox(height: 8),
                         ElevatedButton(
                           onPressed: () => _showCreateAssociationDialog(context),
@@ -236,7 +236,7 @@ class _AssociationsPageState extends ConsumerState<AssociationsPage> {
               ),
               const SizedBox(height: 12),
               DropdownButtonFormField<String>(
-                value: associationKind,
+                initialValue: associationKind,
                 decoration: InputDecoration(labelText: l10n.associationKind),
                 items: [
                   DropdownMenuItem(value: 'rotating', child: Text(l10n.rotating)),

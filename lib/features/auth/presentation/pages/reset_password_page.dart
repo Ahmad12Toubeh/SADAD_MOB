@@ -4,7 +4,6 @@ import 'package:go_router/go_router.dart';
 
 import '../../../../core/l10n/app_localizations.dart';
 import '../../../../core/network/api_client.dart';
-import '../../../../shared/utils/validators.dart';
 
 class ResetPasswordPage extends ConsumerStatefulWidget {
   const ResetPasswordPage({super.key});
@@ -41,10 +40,13 @@ class _ResetPasswordPageState extends ConsumerState<ResetPasswordPage> {
 
     try {
       final apiClient = ref.read(apiClientProvider);
-      await apiClient.post('/auth/reset-password', data: {
-        'code': _codeController.text.trim(),
-        'newPassword': _newPasswordController.text.trim(),
-      });
+      await apiClient.post(
+        '/auth/reset-password',
+        data: {
+          'code': _codeController.text.trim(),
+          'newPassword': _newPasswordController.text.trim(),
+        },
+      );
 
       if (mounted) {
         setState(() {
@@ -125,12 +127,19 @@ class _ResetPasswordPageState extends ConsumerState<ResetPasswordPage> {
                         ),
                         child: Row(
                           children: [
-                            Icon(Icons.error_outline, color: Colors.red.shade700, size: 20),
+                            Icon(
+                              Icons.error_outline,
+                              color: Colors.red.shade700,
+                              size: 20,
+                            ),
                             const SizedBox(width: 8),
                             Expanded(
                               child: Text(
                                 _errorMessage!,
-                                style: TextStyle(color: Colors.red.shade700, fontSize: 14),
+                                style: TextStyle(
+                                  color: Colors.red.shade700,
+                                  fontSize: 14,
+                                ),
                               ),
                             ),
                           ],
@@ -146,12 +155,19 @@ class _ResetPasswordPageState extends ConsumerState<ResetPasswordPage> {
                         ),
                         child: Row(
                           children: [
-                            Icon(Icons.check_circle_outline, color: Colors.green.shade700, size: 20),
+                            Icon(
+                              Icons.check_circle_outline,
+                              color: Colors.green.shade700,
+                              size: 20,
+                            ),
                             const SizedBox(width: 8),
                             Expanded(
                               child: Text(
                                 _successMessage!,
-                                style: TextStyle(color: Colors.green.shade700, fontSize: 14),
+                                style: TextStyle(
+                                  color: Colors.green.shade700,
+                                  fontSize: 14,
+                                ),
                               ),
                             ),
                           ],
@@ -224,7 +240,10 @@ class _ResetPasswordPageState extends ConsumerState<ResetPasswordPage> {
                           ? const SizedBox(
                               width: 20,
                               height: 20,
-                              child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white),
+                              child: CircularProgressIndicator(
+                                strokeWidth: 2,
+                                color: Colors.white,
+                              ),
                             )
                           : Text(l10n.resetSubmit),
                     ),

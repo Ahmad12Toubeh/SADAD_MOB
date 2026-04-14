@@ -108,11 +108,11 @@ class RecentActivityTable extends StatelessWidget {
                       DataCell(Text(_typeLabel(debt.type, l10n))),
                       DataCell(Text(
                         DateFormat('yyyy/MM/dd').format(debt.dueDate),
-                      )),
+                      ),),
                       DataCell(
                         Container(
                           padding: const EdgeInsets.symmetric(
-                              horizontal: 8, vertical: 4),
+                              horizontal: 8, vertical: 4,),
                           decoration: BoxDecoration(
                             color: statusColor.withOpacity(0.1),
                             borderRadius: BorderRadius.circular(12),
@@ -127,7 +127,7 @@ class RecentActivityTable extends StatelessWidget {
                           ),
                         ),
                       ),
-                    ]);
+                    ],);
                   }).toList(),
                 ),
               ),

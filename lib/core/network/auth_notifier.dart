@@ -61,7 +61,7 @@ class AuthNotifier extends AsyncNotifier<AuthState> {
       final response = await apiClient.post('/auth/login', data: {
         'email': email,
         'password': password,
-      });
+      },);
 
       final data = response.data;
       final token = data['access_token'] ?? data['token'];
@@ -94,7 +94,7 @@ class AuthNotifier extends AsyncNotifier<AuthState> {
         'email': email,
         'password': password,
         'storeName': storeName,
-      });
+      },);
       return const AuthState();
     });
   }

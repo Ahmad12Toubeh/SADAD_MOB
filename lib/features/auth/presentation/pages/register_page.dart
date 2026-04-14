@@ -148,7 +148,7 @@ class _RegisterPageState extends ConsumerState<RegisterPage> {
                         suffixIcon: IconButton(
                           icon: Icon(_obscurePassword
                               ? Icons.visibility_off
-                              : Icons.visibility),
+                              : Icons.visibility,),
                           onPressed: () =>
                               setState(() => _obscurePassword = !_obscurePassword),
                         ),
@@ -163,7 +163,7 @@ class _RegisterPageState extends ConsumerState<RegisterPage> {
                               width: 20,
                               height: 20,
                               child: CircularProgressIndicator(
-                                  strokeWidth: 2, color: Colors.white),
+                                  strokeWidth: 2, color: Colors.white,),
                             )
                           : Text(l10n.registerSubmit),
                     ),

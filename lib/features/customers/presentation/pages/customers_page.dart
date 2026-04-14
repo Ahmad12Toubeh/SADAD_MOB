@@ -85,7 +85,7 @@ class _CustomersPageState extends ConsumerState<CustomersPage> {
                         Icon(Icons.people_outline, size: 64, color: Colors.grey.shade400),
                         const SizedBox(height: 16),
                         Text(l10n.noCustomers,
-                            style: TextStyle(color: Colors.grey.shade500, fontSize: 16)),
+                            style: TextStyle(color: Colors.grey.shade500, fontSize: 16),),
                         const SizedBox(height: 8),
                         ElevatedButton(
                           onPressed: () => _showAddCustomerDialog(context),

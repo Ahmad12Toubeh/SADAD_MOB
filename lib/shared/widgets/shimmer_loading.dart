@@ -42,19 +42,19 @@ class ShimmerCardList extends StatelessWidget {
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       itemCount: count,
-      itemBuilder: (_, __) => Padding(
-        padding: const EdgeInsets.only(bottom: 12),
+      itemBuilder: (_, __) => const Padding(
+        padding: EdgeInsets.only(bottom: 12),
         child: Card(
           child: Padding(
-            padding: const EdgeInsets.all(16),
+            padding: EdgeInsets.all(16),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const ShimmerLoading(width: 150, height: 16),
-                const SizedBox(height: 12),
-                const ShimmerLoading(height: 12),
-                const SizedBox(height: 8),
-                const ShimmerLoading(width: 200, height: 12),
+                ShimmerLoading(width: 150, height: 16),
+                SizedBox(height: 12),
+                ShimmerLoading(height: 12),
+                SizedBox(height: 8),
+                ShimmerLoading(width: 200, height: 12),
               ],
             ),
           ),

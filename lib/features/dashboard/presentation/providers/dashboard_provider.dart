@@ -71,7 +71,7 @@ class DashboardNotifier extends AsyncNotifier<DashboardData> {
                 ? DateTime.tryParse(item['dueDate'].toString()) ?? DateTime.now()
                 : DateTime.now(),
             status: item['status']?.toString() ?? 'active',
-          ));
+          ),);
         }
       }
 

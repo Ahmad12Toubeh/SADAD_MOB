@@ -60,7 +60,7 @@ class AnalyticsNotifier extends AsyncNotifier<AnalyticsData> {
             month: item['month'] ?? 1,
             debts: item['debts'] ?? 0,
             collected: item['collected'] ?? 0,
-          ));
+          ),);
         }
       }
 

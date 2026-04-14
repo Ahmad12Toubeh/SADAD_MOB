@@ -47,7 +47,7 @@ class DebtsNotifier extends AsyncNotifier<List<Debt>> {
                 ? DateTime.tryParse(item['dueDate'].toString()) ?? DateTime.now()
                 : DateTime.now(),
             status: item['status']?.toString() ?? 'active',
-          )).toList();
+          ),).toList();
     });
   }
 

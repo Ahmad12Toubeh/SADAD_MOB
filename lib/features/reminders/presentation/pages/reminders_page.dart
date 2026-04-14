@@ -151,8 +151,8 @@ class _RemindersPageState extends ConsumerState<RemindersPage> {
               ? _getOverdueDays(item.dueDate)
               : _getUpcomingDays(item.dueDate);
           final daysText = isOverdue
-              ? '${days} ${l10n.daysOverdue}'
-              : '${days} ${l10n.daysRemaining}';
+              ? '$days ${l10n.daysOverdue}'
+              : '$days ${l10n.daysRemaining}';
 
           return Card(
             margin: const EdgeInsets.only(bottom: 12),

@@ -78,7 +78,7 @@ class _GuarantorsPageState extends ConsumerState<GuarantorsPage> {
                     : guarantors
                         .where((g) =>
                             g.name.toLowerCase().contains(query) ||
-                            (g.phone?.contains(query) ?? false))
+                            (g.phone?.contains(query) ?? false),)
                         .toList();
 
                 if (filtered.isEmpty) {
@@ -87,10 +87,10 @@ class _GuarantorsPageState extends ConsumerState<GuarantorsPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(Icons.person_search_outlined,
-                            size: 64, color: Colors.grey.shade400),
+                            size: 64, color: Colors.grey.shade400,),
                         const SizedBox(height: 16),
                         Text(l10n.noGuarantors,
-                            style: TextStyle(color: Colors.grey.shade500, fontSize: 16)),
+                            style: TextStyle(color: Colors.grey.shade500, fontSize: 16),),
                       ],
                     ),
                   );

@@ -33,7 +33,7 @@ class _ForgotPasswordPageState extends ConsumerState<ForgotPasswordPage> {
       final apiClient = ref.read(apiClientProvider);
       await apiClient.post('/auth/forgot-password', data: {
         'email': _emailController.text.trim(),
-      });
+      },);
       if (mounted) setState(() => _emailSent = true);
     } catch (e) {
       if (mounted) {
@@ -67,7 +67,7 @@ class _ForgotPasswordPageState extends ConsumerState<ForgotPasswordPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(Icons.mark_email_read_outlined,
-                            size: 64, color: theme.colorScheme.primary),
+                            size: 64, color: theme.colorScheme.primary,),
                         const SizedBox(height: 24),
                         Text(
                           l10n.forgotSuccess,
@@ -147,7 +147,7 @@ class _ForgotPasswordPageState extends ConsumerState<ForgotPasswordPage> {
                                     width: 20,
                                     height: 20,
                                     child: CircularProgressIndicator(
-                                        strokeWidth: 2, color: Colors.white),
+                                        strokeWidth: 2, color: Colors.white,),
                                   )
                                 : Text(l10n.forgotSubmit),
                           ),

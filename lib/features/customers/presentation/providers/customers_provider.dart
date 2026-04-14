@@ -39,7 +39,7 @@ class CustomersNotifier extends AsyncNotifier<List<Customer>> {
               phone: item['phone']?.toString() ?? '',
               totalDebt: item['totalDebt'] ?? 0,
               activeDebts: item['activeDebts'] ?? 0,
-            )).toList();
+            ),).toList();
       }
 
       final items = data?['items'] as List? ?? [];
@@ -49,7 +49,7 @@ class CustomersNotifier extends AsyncNotifier<List<Customer>> {
             phone: item['phone']?.toString() ?? '',
             totalDebt: item['totalDebt'] ?? 0,
             activeDebts: item['activeDebts'] ?? 0,
-          )).toList();
+          ),).toList();
     });
   }
 

@@ -94,11 +94,11 @@ class _DebtsPageState extends ConsumerState<DebtsPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(Icons.account_balance_wallet_outlined,
-                            size: 64, color: Colors.grey.shade400),
+                            size: 64, color: Colors.grey.shade400,),
                         const SizedBox(height: 16),
                         Text(l10n.noDebts,
                             style: TextStyle(
-                                color: Colors.grey.shade500, fontSize: 16)),
+                                color: Colors.grey.shade500, fontSize: 16,),),
                       ],
                     ),
                   );
@@ -131,7 +131,7 @@ class _DebtsPageState extends ConsumerState<DebtsPage> {
                                 ),
                                 Container(
                                   padding: const EdgeInsets.symmetric(
-                                      horizontal: 8, vertical: 4),
+                                      horizontal: 8, vertical: 4,),
                                   decoration: BoxDecoration(
                                     color: statusColor.withOpacity(0.1),
                                     borderRadius: BorderRadius.circular(12),
